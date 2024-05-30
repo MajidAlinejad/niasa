@@ -4,7 +4,7 @@ import React from 'react';
 
 type Props = {
   tag: string;
-  value: string;
+  value?: string;
   colorMode: 'Green' | 'Gray';
 };
 

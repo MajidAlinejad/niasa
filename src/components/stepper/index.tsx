@@ -17,7 +17,9 @@ const RegisterPlanStepper = (props: Props) => {
 
   return (
     <section className="flex w-full">
-      {steps.map((step, inx) => StepComponent(inx, step, activeStep))}
+      {steps.map((step, inx) => (
+        <StepComponent key={inx} {...{ inx, step, activeStep }} />
+      ))}
     </section>
   );
 };
@@ -25,7 +27,15 @@ const RegisterPlanStepper = (props: Props) => {
 export default RegisterPlanStepper;
 
 //
-function StepComponent(inx: number, step: string, activeStep: number): React.JSX.Element {
+function StepComponent({
+  activeStep,
+  inx,
+  step,
+}: {
+  inx: number;
+  step: string;
+  activeStep: number;
+}): React.JSX.Element {
   const Typography = (
     <span
       className={clsx(
