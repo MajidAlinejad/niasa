@@ -1,9 +1,12 @@
-export const WomanCurrent = () => (
+import { SVGProps } from 'react';
+
+export const WomanCurrent = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width="183"
     height="284"
     viewBox="0 0 183 284"
     fill="none"
+    {...props}
     xmlns="http://www.w3.org/2000/svg"
   >
     <rect width="183" height="284" fill="url(#pattern0_31_48)" />

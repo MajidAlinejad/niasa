@@ -1,9 +1,12 @@
-export const ManGoal = () => (
+import { SVGProps } from 'react';
+
+export const ManGoal = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width="232"
     height="276"
     viewBox="0 0 232 276"
     fill="none"
+    {...props}
     xmlns="http://www.w3.org/2000/svg"
   >
     <rect width="232" height="276" fill="url(#pattern0_31_51)" />

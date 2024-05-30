@@ -1,9 +1,12 @@
-export const ManCurrent = () => (
+import { SVGProps } from 'react';
+
+export const ManCurrent = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width="218"
     height="276"
     viewBox="0 0 218 276"
     fill="none"
+    {...props}
     xmlns="http://www.w3.org/2000/svg"
   >
     <rect width="218" height="276" fill="url(#pattern0_31_52)" />
