@@ -1,6 +1,6 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import clsx from 'clsx';
 import React from 'react';
-
-import { Box, Card, Typography, CardContent } from '@mui/material';
 
 type Props = {
   tag: string;
@@ -8,37 +8,16 @@ type Props = {
   colorMode: 'Green' | 'Gray';
 };
 
-const InfoCapsule = ({ tag, value, colorMode }: Props) => {
-  const card = (
-    <CardContent
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: '18px',
-      }}
-    >
-      <Typography sx={{ fontSize: '14px' }} component="div">
-        {tag}
-      </Typography>
-      <Typography sx={{ fontSize: '24px' }} component="div">
-        {value}
-      </Typography>
-    </CardContent>
-  );
-  return (
-    <Box sx={{ minWidth: 275 }}>
-      <Card
-        sx={{
-          boxShadow: 'none',
-          backgroundColor: colorMode === 'Gray' ? '#F0F4F7' : '#F4FBE7',
-          borderRadius: '32px',
-        }}
-      >
-        {card}
-      </Card>
-    </Box>
-  );
-};
+const InfoCapsule = ({ tag, value, colorMode }: Props) => (
+  <div
+    className={clsx(
+      ' rounded-[32px] h-[88px] flex items-center justify-center gap-[16px] text-text',
+      colorMode === 'Gray' ? 'bg-gray' : 'bg-greenDisable'
+    )}
+  >
+    <span className="text-[14px] font-semibold">{tag}</span>
+    <span className="text-[24px]">{value}</span>
+  </div>
+);
 
 export default InfoCapsule;
