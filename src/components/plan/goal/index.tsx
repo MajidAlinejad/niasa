@@ -8,7 +8,9 @@ import { useParams } from 'next/navigation';
 import axios, { AxiosResponse } from 'axios';
 
 import { IPersons } from 'src/interfaces';
+import { ManGoal } from 'src/assets/svgs/goal/manGoal';
 import { WomanGoal } from 'src/assets/svgs/goal/womanGoal';
+import { ManCurrent } from 'src/assets/svgs/goal/manCurrent';
 import { WomanCurrent } from 'src/assets/svgs/goal/womanCurrent';
 
 type Props = {};
@@ -21,22 +23,39 @@ const Goal = (props: Props) => {
   return (
     <div className="flex flex-col col-span-1 lg:col-span-2 gap-y-[16px]">
       <section className="flex w-full min-h-[240px] max-h-[380px] gap-x-[16px] relative">
-        <div className="rounded-[32px] bg-gray grow h-full flex justify-center items-center flex-col gap-y-[23px] ">
+        <div className="rounded-[32px] bg-gray grow h-[240px] lg:h-[380px] flex justify-center items-center flex-col gap-y-[23px] ">
           <span className="bg-white text-text h-[56px] flex items-center justify-center lg:w-[152px] w-[136px] rounded-[28px]  absolute  lg:top-[25px] top-[16px] ">
             Now
           </span>
-
-          <WomanCurrent className="lg:w-[183px] lg:h-[276px] w-[85px] h-[131px] absolute bottom-0 " />
+          {data?.data.gender === 'female' ? (
+            <WomanCurrent className="lg:w-[183px] lg:h-[276px] w-[85px] h-[131px] absolute bottom-0 " />
+          ) : (
+            ''
+          )}
+          {data?.data.gender === 'male' ? (
+            <ManCurrent className="lg:w-[183px] lg:h-[231px] w-[130px] h-[150px] absolute bottom-0 " />
+          ) : (
+            ''
+          )}
         </div>
         <Icon
           className="lg:p-[36px] p-[18px] lg:h-[96px] lg:w-[96px] h-[56px] w-[56px]  rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-[#C9D6E2]"
           icon="ph:caret-right"
         />
-        <div className="rounded-[32px] bg-gray grow h-full flex justify-center items-center flex-col gap-y-[23px] ">
+        <div className="rounded-[32px] bg-gray grow h-[240px] lg:h-[380px] flex justify-center items-center flex-col gap-y-[23px] ">
           <span className="bg-white text-text h-[56px] flex items-center justify-center lg:w-[152px] w-[136px] rounded-[28px] absolute  lg:top-[25px] top-[16px]  ">
             Your goal
           </span>
-          <WomanGoal className="lg:w-[183px] lg:h-[276px] w-[85px] h-[131px] absolute bottom-0 " />
+          {data?.data.gender === 'female' ? (
+            <WomanGoal className="lg:w-[183px] lg:h-[276px] w-[85px] h-[131px] absolute bottom-0 " />
+          ) : (
+            ''
+          )}
+          {data?.data.gender === 'male' ? (
+            <ManGoal className="lg:w-[196px] lg:h-[231px] w-[130px] h-[150px] absolute bottom-0 " />
+          ) : (
+            ''
+          )}
         </div>
       </section>
       <section className="rounded-[28px] h-[88px] flex items-center justify-around border-2 border-gray relative">
