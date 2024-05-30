@@ -20,11 +20,3 @@
 }
 
 
-@font-face {
-  font-family: 'Mont';
-  font-weight: 700;
-  font-style: normal;
-  src: local('Mont'), url('Mont/Mont-SemiBold.otf') format('opentype');
-}
-
-

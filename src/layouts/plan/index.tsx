@@ -50,7 +50,6 @@ export default function PlanLayout({ children }: Props) {
   return (
     <>
       <Header />
-
       <Box
         sx={{
           minHeight: 1,
