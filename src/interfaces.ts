@@ -10,6 +10,7 @@ export interface IPersons {
 }
 
 export interface IAvailablePlans {
+  id?: number;
   title?: string;
   description?: string;
   price?: number;

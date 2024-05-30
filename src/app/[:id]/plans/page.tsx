@@ -20,14 +20,14 @@ export default function Plans() {
       </PlanSection>
       {/*  */}
       <PlanSection title="By using our plans, you can reach your goal">
-        <MakePayment />
-      </PlanSection>
-      {/*  */}
-      <PlanSection title="Choose your plan just now!">
         <Endomorph />
         <BMI />
         <GrayInfo />
         <GreenInfo />
+      </PlanSection>
+      {/*  */}
+      <PlanSection title="Choose your plan just now!">
+        <MakePayment />
       </PlanSection>
       {/*  */}
       <PlanSection title="Your selected 2-month plan is ready!">

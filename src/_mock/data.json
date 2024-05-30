@@ -8,6 +8,7 @@
   "Metabolism": "Moderate, Narrowly",
   "availablePlans": [
     {
+      "id": 1,
       "title": "1-Month Plan",
       "description": "This plan is especially designed for begginers.",
       "price": 1600,
@@ -15,6 +16,7 @@
       "popular": true
     },
     {
+      "id": 2,
       "title": "2-Month Plan",
       "description": "This plan is especially designed for begginers.",
       "price": 1600,
@@ -22,6 +24,7 @@
       "popular": false
     },
     {
+      "id": 3,
       "title": "3-Month Plan",
       "description": "This plan is especially designed for begginers.",
       "price": 1600,
