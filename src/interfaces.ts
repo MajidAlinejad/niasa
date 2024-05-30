@@ -6,4 +6,13 @@ export interface IPersons {
   foodTaste: string;
   lifestyle: string;
   Metabolism: string;
+  availablePlans: IAvailablePlans[];
+}
+
+export interface IAvailablePlans {
+  title?: string;
+  description?: string;
+  price?: number;
+  discountPrice?: number;
+  popular?: boolean;
 }

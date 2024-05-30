@@ -5,5 +5,28 @@
   "FitnessLevel": "Intermediate",
   "foodTaste": "Vegan",
   "lifestyle": "Sedentary",
-  "Metabolism": "Moderate, Narrowly"
+  "Metabolism": "Moderate, Narrowly",
+  "availablePlans": [
+    {
+      "title": "1-Month Plan",
+      "description": "This plan is especially designed for begginers.",
+      "price": 1600,
+      "discountPrice": 800,
+      "popular": true
+    },
+    {
+      "title": "2-Month Plan",
+      "description": "This plan is especially designed for begginers.",
+      "price": 1600,
+      "discountPrice": 800,
+      "popular": false
+    },
+    {
+      "title": "3-Month Plan",
+      "description": "This plan is especially designed for begginers.",
+      "price": 1600,
+      "discountPrice": 800,
+      "popular": false
+    }
+  ]
 }
