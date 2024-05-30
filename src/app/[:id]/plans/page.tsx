@@ -1,4 +1,5 @@
 import BMI from 'src/components/plan/BMI';
+import Goal from 'src/components/plan/goal';
 import Endomorph from 'src/components/plan/Endomorph';
 import PlanSection from 'src/components/plan/section';
 import MakePayment from 'src/components/plan/makePayment';
@@ -20,10 +21,7 @@ export default function Plans() {
       </PlanSection>
       {/*  */}
       <PlanSection title="By using our plans, you can reach your goal">
-        <Endomorph />
-        <BMI />
-        <GrayInfo />
-        <GreenInfo />
+        <Goal />
       </PlanSection>
       {/*  */}
       <PlanSection title="Choose your plan just now!">
