@@ -1,3 +1,5 @@
+import 'public/fonts/Mont/font.css';
+
 import Header from './header';
 
 // ----------------------------------------------------------------------

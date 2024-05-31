@@ -32,10 +32,10 @@
       "popular": false
     }
   ],
-  "lossPercent": -7,
+  "lossPercent": -9,
   "loss": [
     {
-      "w": 71,
+      "w": 70,
       "bar": 16
     },
     {
@@ -189,7 +189,7 @@
   ],
   "bmi": {
     "value": 32.5,
-    "percent": 60,
+    "percent": 80,
     "decribe": "OverWeight",
     "icon": "solar:close-square-bold"
   }

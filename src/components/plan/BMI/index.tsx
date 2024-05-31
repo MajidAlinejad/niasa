@@ -16,7 +16,7 @@ type Props = {};
 const BMI = (props: Props) => (
   <div>
     <BmiSlider />
-    <h2 className="text-greenLight font-semibold pl-[28px]">Healthy BMI</h2>
+    <h2 className="text-greenLight font-bold pl-[28px] pt-[30px]">Healthy BMI</h2>
     <p className="text-text text-[16px] text-justify">
       Your initial body situation is here. It’s crucial for starting a very healthy diet and
       exercise plan.
@@ -46,7 +46,12 @@ function BmiSlider() {
             percent > 75 && ' text-text'
           )}
         >
-          <Icon width={15} height={15} icon={data?.data.bmi.icon as any} />
+          <Icon
+            width={15}
+            height={15}
+            className="-translate-y-[2px]"
+            icon={data?.data.bmi.icon as any}
+          />
           {data?.data.bmi.decribe}
         </span>
       </div>
