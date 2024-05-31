@@ -1,5 +1,6 @@
 import BMI from 'src/components/plan/BMI';
 import Goal from 'src/components/plan/goal';
+import LossWeight from 'src/components/plan/loss';
 import Endomorph from 'src/components/plan/Endomorph';
 import PlanSection from 'src/components/plan/section';
 import MakePayment from 'src/components/plan/makePayment';
@@ -29,10 +30,7 @@ export default function Plans() {
       </PlanSection>
       {/*  */}
       <PlanSection title="Your selected 2-month plan is ready!">
-        <Endomorph />
-        <BMI />
-        <GrayInfo />
-        <GreenInfo />
+        <LossWeight />
       </PlanSection>
     </main>
   );

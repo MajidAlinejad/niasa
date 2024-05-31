@@ -7,6 +7,11 @@ export interface IPersons {
   lifestyle: string;
   Metabolism: string;
   availablePlans: IAvailablePlans[];
+  lossPercent: number;
+  loss: {
+    w: number;
+    bar: number;
+  }[];
 }
 
 export interface IAvailablePlans {
