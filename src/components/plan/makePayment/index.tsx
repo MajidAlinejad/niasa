@@ -13,16 +13,32 @@ import { IPersons } from 'src/interfaces';
 import PlanCard from '../card';
 
 type Props = {};
+type IRes = {
+  url: string;
+};
 
 const MakePayment = (props: Props) => {
   const params = useParams<{ ':id': string }>();
   const id = params[':id'];
   const { data } = useSWR<AxiosResponse<IPersons>>(`/api?id=${id}`, axios);
-
   const [selected, onSelect] = useState<number | undefined>();
 
   function sendReq() {
-    console.log(selected);
+    axios
+      .post<IRes>(
+        '/api/checkout',
+        {
+          id: selected,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res.data.url);
+      });
   }
 
   return (
@@ -34,7 +50,8 @@ const MakePayment = (props: Props) => {
       </div>
       <button
         onClick={() => sendReq()}
-        className="bg-green hover:bg-greenLight cursor-pointer w-[432px] h-[56px] rounded-[32px] text-[16px]"
+        disabled={!selected}
+        className="bg-green hover:bg-greenLight cursor-pointer w-[432px] h-[56px] rounded-[32px] text-[16px] disabled:opacity-25 "
       >
         Make Payment
       </button>
