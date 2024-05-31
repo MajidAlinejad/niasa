@@ -188,7 +188,7 @@
     }
   ],
   "bmi": {
-    "value": 30,
+    "value": 32.5,
     "percent": 60,
     "decribe": "OverWeight",
     "icon": "solar:close-square-bold"
