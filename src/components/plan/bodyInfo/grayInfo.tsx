@@ -24,7 +24,7 @@ const GrayInfo = (props: Props) => {
         tag="Your current weight:"
         value={`${data?.data.currentWeight} Kg`}
       />
-      <InfoCapsule colorMode="Gray" tag="Your height:" value={`${data?.data.height} Cm`} />
+      <InfoCapsule colorMode="Gray" tag="Your height:" value={`${data?.data.height} cm`} />
       <InfoCapsule colorMode="Gray" tag="Fitness level:" value={data?.data.FitnessLevel} />
     </section>
   );

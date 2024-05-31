@@ -4,9 +4,10 @@
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import useSWR from 'swr';
+import NProgress from 'nprogress';
 import React, { useState } from 'react';
-import { useParams } from 'next/navigation';
 import axios, { AxiosResponse } from 'axios';
+import { useParams, useRouter } from 'next/navigation';
 
 import { IPersons } from 'src/interfaces';
 
@@ -19,11 +20,13 @@ type IRes = {
 
 const MakePayment = (props: Props) => {
   const params = useParams<{ ':id': string }>();
+  const navigation = useRouter();
   const id = params[':id'];
   const { data } = useSWR<AxiosResponse<IPersons>>(`/api?id=${id}`, axios);
   const [selected, onSelect] = useState<number | undefined>();
 
   function sendReq() {
+    NProgress.start();
     axios
       .post<IRes>(
         '/api/checkout',
@@ -37,7 +40,8 @@ const MakePayment = (props: Props) => {
         }
       )
       .then((res) => {
-        console.log(res.data.url);
+        navigation.push(`${res.data.url}/${selected}`);
+        NProgress.done();
       });
   }
 
