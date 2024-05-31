@@ -1,5 +1,5 @@
 {
-  "gender": "female",
+  "gender": "male",
   "currentWeight": 78,
   "height": 178,
   "FitnessLevel": "Intermediate",
@@ -188,9 +188,9 @@
     }
   ],
   "bmi": {
-    "value": 23.8,
-    "percent": 42,
-    "decribe": "Normal",
-    "icon": "akar-icons:check-box-fill"
+    "value": 30,
+    "percent": 60,
+    "decribe": "OverWeight",
+    "icon": "solar:close-square-bold"
   }
 }

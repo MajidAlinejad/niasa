@@ -1,5 +1,15 @@
+'use client';
+
+// eslint-disable-next-line import/no-extraneous-dependencies
 import clsx from 'clsx';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import useSWR from 'swr';
 import React from 'react';
+import { Icon } from '@iconify/react';
+import { useParams } from 'next/navigation';
+import axios, { AxiosResponse } from 'axios';
+
+import { IPersons } from 'src/interfaces';
 
 type Props = {};
 
@@ -17,11 +27,28 @@ const BMI = (props: Props) => (
 export default BMI;
 
 function BmiSlider() {
+  const params = useParams<{ ':id': string }>();
+  const id = params[':id'];
+  const { data } = useSWR<AxiosResponse<IPersons>>(`/api?id=${id}`, axios);
+
+  const percent = data?.data.bmi.percent || 0;
+
   return (
     <section className="border-2 border-gray rounded-[32px] p-[32px]">
       <div className="flex grow justify-between pb-[64px]">
         <span className="text-text text-[18px] font-extrabold ">BMI</span>
-        <span className="text-green text-[14px] font-semibold ">Normal</span>
+        <span
+          className={clsx(
+            ' text-[14px] font-semibold flex items-center gap-[5px]',
+            percent <= 25 && ' text-text ',
+            percent > 25 && percent <= 50 && 'text-green',
+            percent > 50 && percent <= 75 && ' text-disableText ',
+            percent > 75 && ' text-text'
+          )}
+        >
+          <Icon width={15} height={15} icon={data?.data.bmi.icon as any} />
+          {data?.data.bmi.decribe}
+        </span>
       </div>
       <div className="flex flex-col gap-[8px]" dir="rtl">
         <div className="flex justify-between items-center">
@@ -43,19 +70,25 @@ function BmiSlider() {
           <span
             className={clsx(
               'absolute z-[20] w-[16px] h-[16px]  bg-white border-[6px] rounded-full top-[2px] -translate-y-1/2 translate-x-1/2',
-              'border-greenLight',
-              'right-[50%]'
+              percent <= 25 && ' border-text ',
+              percent > 25 && percent <= 50 && 'border-greenLight',
+              percent > 50 && percent <= 75 && ' border-disableText ',
+              percent > 75 && ' border-text'
             )}
+            style={{ right: `${percent}%` }}
           />
           <span
             className={clsx(
-              'absolute flex items-center justify-center z-[20] w-[72px] h-[40px] rounded-[20px] -top-[15px] -translate-y-full translate-x-0 rounded-br-none shadow-lg ',
-              ' bg-green shadow-[#AAE23A60]',
-              'text-white',
-              'right-[50%]'
+              'absolute flex select-none items-center justify-center z-[20] w-[72px] h-[40px] rounded-[20px] -top-[15px] -translate-y-full translate-x-0 rounded-br-none shadow-lg ',
+              percent <= 25 && ' bg-text shadow-[#072C5060]',
+              percent > 25 && percent <= 50 && ' bg-green shadow-[#AAE23A60]',
+              percent > 50 && percent <= 75 && ' bg-disableText shadow-[#7F9CB860]',
+              percent > 75 && ' bg-text shadow-[#072C5060]',
+              'text-white'
             )}
+            style={{ right: `${percent}%` }}
           >
-            23.5
+            {data?.data.bmi.value}
           </span>
         </div>
       </div>

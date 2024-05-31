@@ -12,6 +12,12 @@ export interface IPersons {
     w: number;
     bar: number;
   }[];
+  bmi: {
+    value: number;
+    percent: number;
+    decribe: string;
+    icon: string;
+  };
 }
 
 export interface IAvailablePlans {
